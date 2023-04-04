@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+  | Home
+{% endblock %}
+
+{% block content %}
+  <h1>GenshBooster Home</h1>
+  <hr>
+  <p>
+    Hello! I’m Arataki Itto!
+    The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka…
+    Well, guess you're with the Arataki Gang now!
+    Wait, what? You've never heard of them? Are you trying to be funny here?
+
+  </p>
+  <h5>Arataki Gang Privileges</h5>
+  <p>One moment, I will tell you one thing. We have Kuki Shinobu and she stores our data on paper!</p>
+  <ul>
+    <li><strong>Storage:</strong> Hey, I have connections actually! I have a lot of friends and I know them all by sight!</li>
+    <li><strong>Estimation:</strong> I'll help you to deal more damage!</li>
+    <li><strong>My Heroes:</strong> Listen, if you have friends, invite them into our greatest Arataki Gang! But don't forget to fill out the form...</li>
+  </ul>
+
+  <p>Hey, I'm glad to see you again! I like that you don't forget about Arataki Gang! I meet with you
+      {{ num_visits }} time{{ num_visits|pluralize }}. Yeah, I count each of our meetings!
+  </p>
+
+  {% if posts.exists %}
+    {% include "includes/posts.html" %}
+  {% endif %}
+{% endblock %}

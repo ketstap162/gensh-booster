@@ -1,0 +1,20 @@
+<div class="container-fluid content-block char-list-body">
+  {% for char in chars %}
+    <div class="char-card">
+      <div>
+        <img
+            src="https://genshin.honeyhunterworld.com/img/itto_057_icon.webp?x78105"
+            alt="Avatar"
+            class="card-img"
+        >
+      </div>
+      <hr class="card-hr">
+      <h1 class="card-header">{{ char.full_name }}</h1>
+      <p>Title: {{ char.title }}</p>
+      <p>Location: {{ char.location }}</p>
+      <p>Element: {{ char.element }}</p>
+      <p>Weapon: {{ char.weapon }}</p>
+      <a href="#" class="card-link"></a>
+    </div>
+  {% endfor %}
+ </div>

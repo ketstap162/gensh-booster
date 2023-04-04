@@ -1,0 +1,137 @@
+h1{
+    text-align: center;
+}
+
+hr{
+    height: 1px;
+    background-color: rebeccapurple;
+    border: none;
+}
+
+\header {
+    margin: 20px;
+}
+
+.background-main{
+    background-size: 250px;
+    background-repeat: repeat;
+    background-color: black;
+    color: rgb(220, 220, 220);
+}
+
+.header-main{
+    color: rgb(210, 210, 210);
+}
+
+.nav-header {
+    width: 1100px;
+    border-radius: 10px;
+    background-color: rgba(50, 0, 0, 0.9);
+    border: 2px solid darkred;
+    color: white;
+}
+
+.navbar-header{
+    display: flex;
+    gap: 0.5rem;
+    color: white;
+}
+
+.nav-text{
+    color: rgba(210, 210, 210, 0.9);
+}
+
+.content-block {
+    width: 1100px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 2px solid darkred;
+}
+
+.newspaper-content {
+    width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0;
+    border: 2px solid black;
+}
+
+/* POSTS */
+.news-body{
+    width: 900px;
+    opacity: 100%;
+    background-color: rgba(30, 0, 0, 0.2);
+
+}
+
+.news-header{
+    text-align: center;
+}
+
+.post-header{
+    font-weight: bold;
+}
+.post-author{
+    font-style: italic;
+    margin-bottom: 10px;
+}
+.post-content{
+    border: 1px dashed rgba(102, 51, 153, 0.3);
+    border-left: 5px solid rebeccapurple;
+    padding: 10px;
+}
+
+/* CHARACTER LIST */
+.char-list-body{
+    margin: 0 auto;
+    width: 1040px;
+    opacity: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+}
+
+.char-card{
+    margin: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 230px;
+    position: relative;
+    background-color: rgba(200, 200, 200, 0.8);
+    border: 4px solid grey;
+    border-radius: 20px;
+    text-align: left;
+    color: black;
+    box-shadow: 0 0 20px black;
+    overflow: hidden;
+}
+
+.card-header{
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+    padding: 5px;
+}
+
+.card-img{
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 30px;
+    background-color: gray;
+    margin: auto;
+    display: block;
+}
+
+.card-hr{
+    background-color: grey;
+    margin-bottom: 0;
+}
+
+.card-link{
+    position: absolute;
+    inset: 0;
+    border: 0 solid transparent;
+    border-radius: 15px;
+}

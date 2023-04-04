@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+  | Home
+{% endblock %}
+
+{% block content %}
+  <h1>Character Storage</h1>
+  <hr>
+  <p>
+    Hello! I’m Arataki Itto!
+    The first and greatest head of the Arataki Gang, famed throughout Inazuma City's Hanamizaka…
+    Well, guess you're with the Arataki Gang now!
+    Wait, what? You've never heard of them? Are you trying to be funny here?
+
+  </p>
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link " href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Storage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Estimation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">My Heroes</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  {% if chars.exists %}
+    {% include "includes/char_list.html" %}
+  {% endif %}
+{% endblock %}

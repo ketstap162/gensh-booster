@@ -1,0 +1,16 @@
+<div class="container-fluid content-block news-body">
+  <h2 class="news-header">News</h2>
+  <hr>
+
+  {% for post in posts.all %}
+    <div class="post-header">{{ post.title }}</div>
+    <div class="post-author">
+      {% if post.author %}
+        {{ post.author }}
+      {% else %}
+        Unknown
+      {% endif %}
+    </div>
+    <div class="post-content">{{ post.content }}</div>
+  {% endfor %}
+</div>
