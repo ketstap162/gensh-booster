@@ -25,7 +25,7 @@
   {% if user.is_authenticated %}
     <div class="float-right">
       {% if user.is_superuser %}
-         <a href="/admin" class="btn btn-dark btn-sml">Admin page</a>
+         <a href="/admin" class="btn btn-dark btn-sml" target="_blank">Admin page</a>
       {% endif %}
       <a href="#" class="btn btn-dark btn-sml">{{ user.username }}</a>
       <a href="#" class="btn btn-dark btn-sml">Logout</a>

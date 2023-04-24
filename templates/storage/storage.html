@@ -1,7 +1,8 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
-  | Home
+  | Storage
 {% endblock %}
 
 {% block content %}
@@ -17,20 +18,14 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link " href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Storage</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Estimation</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">My Heroes</a>
-        </li>
-      </ul>
+      <div class="nav-item filter-el">
+        <a href="{% url 'GenshinStorage:storage' %}"><img src="{% static 'images/elements/multi-element.webp' %}" alt="Multi-Element" class="element-link"></a>
+      </div>
+      {% for element in elements %}
+        <div class="nav-item filter-el">
+          <a href="?filter={{ element.name }}"><img src="{{ element.image.url }}" alt="{{ element.name }}" class="element-link"></a>
+        </div>
+      {% endfor %}
     </div>
   </nav>
 

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  | {{ char.full_name }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ char.full_name }}</h1>
+  <hr>
+  <div class="char-dt-upper-block">
+  {% if char.big_image %}
+    <img src="{{ char.big_image.url }}" alt="CharImage" class="char-dt-image">
+  {% else %}
+     <img src="{% static 'images/unknown-big-border.png' %}" alt="CharImage" class="char-dt-image">
+  {% endif %}
+
+  <div class="char-dt-table">
+    <div class="char-dt-table-row">
+      <div class="char-dt-table-header">Name</div>
+      <div class="char-dt-table-item">{{ char.full_name }}</div>
+    </div>
+    <div class="char-dt-table-row">
+      <div class="char-dt-table-header">Title</div>
+      <div class="char-dt-table-item">{{ char.title }}</div>
+    </div>
+    <div class="char-dt-table-row">
+      <div class="char-dt-table-header">Rarity</div>
+      <div class="char-dt-table-item">
+        {% if char.rarity is 5 %}
+          <div style="color: #d1b904" class="char-dt-stars">★★★★★</div>
+        {% elif char.rarity is 4 %}
+          <div style="color: mediumpurple" class="char-dt-stars">★★★★</div>
+        {% else %}
+          None
+        {% endif %}
+      </div>
+    </div>
+    <div class="char-dt-table-row">
+      <div class="char-dt-table-header">Location</div>
+      <div class="char-dt-table-item">
+        <img src="{{ char.location.icon_light.url }}" alt="LocationImage" class="item-img"> {{ char.location }}
+      </div>
+    </div>
+    <div class="char-dt-table-row">
+      <div class="char-dt-table-header">Element</div>
+      <div class="char-dt-table-item"><img src="{{ char.element.image.url }}" alt="ElementImage" class="item-img"> {{ char.element }}</div>
+    </div>
+    <div class="char-dt-table-row">
+      <div class="char-dt-table-header">Weapon</div>
+      <div class="char-dt-table-item"><img src="{{ char.weapon.image.url }}" alt="WeaponImage" class="item-img"> {{ char.weapon }}</div>
+    </div>
+    <div class="char-dt-table-row">
+      <div class="char-dt-table-header">Description</div>
+      <div class="char-dt-table-item">{{ char.description }}</div>
+    </div>
+  </div>
+  </div>
+{% endblock %}

@@ -1,20 +1,56 @@
+{% load static %}
 <div class="container-fluid content-block char-list-body">
   {% for char in chars %}
     <div class="char-card">
       <div>
-        <img
-            src="https://genshin.honeyhunterworld.com/img/itto_057_icon.webp?x78105"
+        {% if char.small_image %}
+          <img
+            src="{{ char.small_image.url }}"
             alt="Avatar"
             class="card-img"
-        >
+          >
+        {% else %}
+          <img
+            src="{% static 'images/unknown.png' %}"
+            alt="Avatar"
+            class="card-img"
+          >
+        {% endif %}
       </div>
-      <hr class="card-hr">
+
       <h1 class="card-header">{{ char.full_name }}</h1>
-      <p>Title: {{ char.title }}</p>
-      <p>Location: {{ char.location }}</p>
-      <p>Element: {{ char.element }}</p>
-      <p>Weapon: {{ char.weapon }}</p>
-      <a href="#" class="card-link"></a>
+      <hr class="card-hr">
+      <table>
+        <tr class="card-stat">
+          <th>Title</th>
+          <td style="padding-left: 10px">{{ char.title }}</td>
+        </tr>
+        <tr class="card-stat">
+          <th>Rarity</th>
+          <td style="padding-left: 10px">
+            {% if char.rarity is 5 %}
+              <div style="color: #d1b904" class="card-stars">★★★★★</div>
+            {% elif char.rarity is 4 %}
+              <div style="color: mediumpurple" class="card-stars">★★★★</div>
+            {% else %}
+              None
+            {% endif %}
+          </td>
+        </tr>
+        <tr class="card-stat">
+          <th>Location</th>
+          <td style="padding-left: 10px"><img src="{{ char.location.icon_dark.url }}" alt="LocationImage" class="item-img"> {{ char.location }}</td>
+        </tr>
+        <tr class="card-stat">
+          <th>Element</th>
+          <td style="padding-left: 10px"><img src="{{ char.element.image.url }}" alt="ElementImage" class="item-img"> {{ char.element }}</td>
+        </tr>
+        <tr class="card-stat">
+          <th>Weapon</th>
+          <td style="padding-left: 10px"><img src="{{ char.weapon.image.url }}" alt="WeaponImage" class="item-img"> {{ char.weapon }}</td>
+        </tr>
+      </table>
+    <a href="{% url 'GStorage:char-detail' pk=char.id %}" class="card-link"></a>
     </div>
   {% endfor %}
  </div>

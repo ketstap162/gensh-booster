@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from GenshinStorage.models import Post, Character
+from GenshinStorage.models import Post, Character, Element
 
 
 def index(request):
@@ -16,10 +16,25 @@ def index(request):
     return render(request, "main/index.html", context=context)
 
 
-def storage(request):
+def storage_view(request, element=False):
     """View function for the Storage section."""
 
     context = {
-        "chars": Character.objects.all()
+        "elements": Element.objects.all(),
+        "chars": Character.objects.select_related("element", "weapon", "location"),
     }
+
+    element_filter = request.GET.get("filter")
+
+    if element_filter:
+        context["chars"] = context["chars"].filter(element__name=element_filter)
+
     return render(request, "storage/storage.html", context=context)
+
+
+def char_detail_view(request, pk):
+    context = {
+        "char": Character.objects.get(pk=pk),
+    }
+
+    return render(request, "storage/char_detail.html", context=context)

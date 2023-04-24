@@ -116,17 +116,44 @@ hr{
 }
 
 .card-img{
-    width: 100px;
+    width: 80px;
+    height: 80px;
     border: 2px solid black;
     border-radius: 30px;
     background-color: gray;
     margin: auto;
     display: block;
+    margin-bottom: 10px;
+}
+
+.card-stat{
+    height: 50px;
+}
+
+.card-stars{
+    text-shadow: 1px 1px gray, -1px -1px gray, 1px -1px gray, -1px 1px gray;
+    display: inline;
+    font-size: 1.5em;
+}
+
+.item-img {
+    width: 25px;
+    height: 25px;
+    object-fit: scale-down;
+}
+
+.filter-el{
+    margin: 0 5px;
+}
+
+.element-link{
+    width: 40px;
 }
 
 .card-hr{
     background-color: grey;
-    margin-bottom: 0;
+    margin: 5px;
+    padding: 0;
 }
 
 .card-link{
@@ -134,4 +161,67 @@ hr{
     inset: 0;
     border: 0 solid transparent;
     border-radius: 15px;
+}
+
+/* CHAR DETAIL */
+
+.char-dt-upper-block{
+    margin: 20px auto;
+    width: 1040px;
+    overflow: auto;
+    opacity: 100%;
+/*    display: grid;
+    grid-template-columns: repeat(4, max-content); */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.char-dt-upper-block > div:first-child {
+    flex: 0 0 auto;
+}
+
+.char-dt-upper-block > div:last-child {
+    flex: 1 1 max-content;
+}
+
+.char-dt-image{
+    width: 500px;
+    border: 0 solid red;
+    border-radius: 30px;
+    margin: auto;
+    display: block;
+
+}
+
+.char-dt-table {
+    margin: 20px;
+
+    height: max-content;
+    border: 0 solid red;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.char-dt-table-header {
+    padding: 5px;
+    border: 2px solid black;
+    background-color: rgba(200,0,0, 40%);
+    align-content: start;
+}
+
+.char-dt-table-row {
+    display: grid;
+    grid-template-columns: 20% 1fr;
+}
+
+.char-dt-table-item {
+    padding: 5px;
+    border: 2px solid black;
+    background-color: rgba(100,0,0, 40%);
+}
+
+.char-dt-stars{
+    text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+    display: inline;
+    font-size: 1.5em;
 }
