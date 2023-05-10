@@ -1,0 +1,42 @@
+<div>
+  <div class="estimation-table-3">
+    <div class="estimation-column">
+      <div>
+        Crit Hit Damage:
+      </div>
+      <div>
+        {% if result.crit %}
+        {{ result.crit }}
+        {% else %}
+          ---
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="estimation-column">
+          <div>
+        Average Damage:
+      </div>
+      <div>
+        {% if result.average %}
+          {{ result.average }}
+        {% else %}
+          ---
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="estimation-column">
+          <div>
+        Non-Crit Hit Damage:
+      </div>
+      <div>
+        {% if result %}
+          {{ result.hit }}
+        {% else %}
+          ---
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

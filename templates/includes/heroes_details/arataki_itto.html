@@ -1,21 +1,4 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block title %}
-  | {{ char.full_name }}
-{% endblock %}
-
-{% block content %}
-  <h1>{{ char.full_name }}</h1>
-  <hr>
-  <div class="char-dt-upper-block">
-  {% if char.big_image %}
-    <img src="{{ char.big_image.url }}" alt="CharImage" class="char-dt-image">
-  {% else %}
-     <img src="{% static 'images/unknown-big-border.png' %}" alt="CharImage" class="char-dt-image">
-  {% endif %}
-
-  <div class="char-dt-table">
+<div class="char-dt-table">
     <div class="char-dt-table-row">
       <div class="char-dt-table-header">Name</div>
       <div class="char-dt-table-item">{{ char.full_name }}</div>
@@ -54,8 +37,4 @@
       <div class="char-dt-table-header">Description</div>
       <div class="char-dt-table-item">{{ char.description }}</div>
     </div>
-  </div>
-  </div>
-  {% include char.html_link %}
-
-{% endblock %}
+</div>

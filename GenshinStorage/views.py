@@ -21,7 +21,7 @@ def storage_view(request, element=False):
 
     context = {
         "elements": Element.objects.all(),
-        "chars": Character.objects.select_related("element", "weapon", "location"),
+        "chars": Character.objects.select_related("element", "weapon", "location").order_by("full_name"),
     }
 
     element_filter = request.GET.get("filter")

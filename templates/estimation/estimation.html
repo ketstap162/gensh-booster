@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  | Storage
+{% endblock %}
+
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+    <div class="estimation-header">
+    <div>
+      <input type="text" name="save_name" placeholder="Template Name" class="estimation-btn">
+      <input type="submit" value="Save" class="estimation-btn">
+    </div>
+  </div>
+
+  <div class="estimation-table-3">
+    {% include 'estimation/includes/column_1.html'%}
+    {% include 'estimation/includes/column_2.html' %}
+    {% include 'estimation/includes/column_3.html' %}
+  </div>
+
+  <div class="estimation-submit">
+    <input type="submit" value="Submit" class="estimation-submit-btn btn btn-dark">
+  </div>
+
+  {% if result %}
+    {% include 'estimation/includes/result.html' %}
+  {% endif %}
+</form>
+{% endblock %}

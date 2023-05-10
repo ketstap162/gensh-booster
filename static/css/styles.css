@@ -171,7 +171,7 @@ hr{
     overflow: auto;
     opacity: 100%;
 /*    display: grid;
-    grid-template-columns: repeat(4, max-content); */
+    grid-template-includes: repeat(4, max-content); */
     display: flex;
     justify-content: flex-start;
 }
@@ -224,4 +224,68 @@ hr{
     text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
     display: inline;
     font-size: 1.5em;
+}
+
+/* ESTIMATION */
+
+.estimation-header{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.estimation-table-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.estimation-column {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.points-form {
+    width: 100px;
+}
+
+.percent-form {
+    width: 80px;
+}
+
+.estimation-submit{
+    text-align: center;
+}
+
+.estimation-submit-btn{
+    width: 200px;
+    height: 80px;
+}
+
+.est-row{
+    display: table-row;
+}
+
+.est-item{
+    display: table-cell;
+    padding: 5px;
+}
+
+.tabulation{
+    width: 100px;
+}
+
+.estimation-btn {
+    height: 30px;
+}
+
+input[type='radio'] {
+    accent-color: darkred;
+}
+
+input[type="checkbox"]:checked {
+    accent-color: darkred;
 }

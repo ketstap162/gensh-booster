@@ -95,6 +95,12 @@ class Character(models.Model):
     def __str__(self):
         return self.full_name
 
+    def snake_name(self):
+        return "_".join(self.full_name.split()).lower()
+
+    def html_link(self):
+        return "includes/heroes_details/" + self.snake_name() + ".html"
+
 
 class Skill(models.Model):
     NORMAL_ATTACK = "NA"
