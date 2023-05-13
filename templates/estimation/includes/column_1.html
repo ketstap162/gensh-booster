@@ -4,9 +4,9 @@
       ATK
       <br>
       {% if stats.attack %}
-        <input type="number" name="attack" placeholder="points" class="points-form" step="0.1" value="{{ stats.attack }}">
+        <input type="number" name="attack" placeholder="points" class="points-form" step="1" min="0" max="99999" value="{{ stats.attack }}">
       {% else %}
-        <input type="number" name="attack" placeholder="points" class="points-form" step="0.1" value="">
+        <input type="number" name="attack" placeholder="points" class="points-form" step="1" min="0" max="99999" value="">
       {% endif %}
     </div>
 
@@ -14,9 +14,9 @@
       Scaling
       <br>
       {% if stats.attack_percent %}
-      <input type="number" name="attack_percent" placeholder="%" class="percent-form" step="0.1" value="{{ stats.attack_percent }}">
+      <input type="number" name="attack_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99" value="{{ stats.attack_percent }}">
       {% else %}
-        <input type="number" name="attack_percent" placeholder="%" class="percent-form" step="0.1">
+        <input type="number" name="attack_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99">
       {% endif %}
     </div>
   </div>
@@ -26,9 +26,9 @@
       DEF
       <br>
       {% if stats.defense %}
-      <input type="number" name="defense" placeholder="points" class="points-form" step="0.1" value="{{ stats.defense }}">
+      <input type="number" name="defense" placeholder="points" class="points-form" step="1" min="0" max="99999" value="{{ stats.defense }}">
       {% else %}
-      <input type="number" name="defense" placeholder="points" class="points-form" step="0.1">
+      <input type="number" name="defense" placeholder="points" class="points-form" step="1" min="0" max="99999">
       {% endif %}
     </div>
 
@@ -36,9 +36,9 @@
       Scaling
       <br>
       {% if stats.defense_percent %}
-      <input type="number" name="defense_percent" placeholder="%" class="percent-form" step="0.1" value="{{ stats.defense_percent }}">
+      <input type="number" name="defense_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99" value="{{ stats.defense_percent }}">
       {% else %}
-      <input type="number" name="defense_percent" placeholder="%" class="percent-form" step="0.1">
+      <input type="number" name="defense_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99">
       {% endif %}
     </div>
   </div>
@@ -48,9 +48,9 @@
       HP
       <br>
       {% if stats.hp %}
-        <input type="number" name="hp" placeholder="points" class="points-form" step="0.1" value="{{ stats.hp }}">
+        <input type="number" name="hp" placeholder="points" class="points-form" step="1" min="0" max="99999" value="{{ stats.hp }}">
       {% else %}
-        <input type="number" name="hp" placeholder="points" class="points-form" step="0.1">
+        <input type="number" name="hp" placeholder="points" class="points-form" step="1" min="0" max="99999">
       {% endif %}
     </div>
 
@@ -58,9 +58,9 @@
       Scaling
       <br>
       {% if stats.hp_percent %}
-        <input type="number" name="hp_percent" placeholder="%" class="percent-form" step="0.1" value="{{ stats.hp_percent }}">
+        <input type="number" name="hp_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99" value="{{ stats.hp_percent }}">
       {% else %}
-        <input type="number" name="hp_percent" placeholder="%" class="percent-form" step="0.1">
+        <input type="number" name="hp_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99">
       {% endif %}
     </div>
   </div>
@@ -72,9 +72,9 @@
       Additional
       <br>
       {% if stats.add1 %}
-        <input type="number" name="add1" placeholder="points" class="points-form" step="0.1" value="{{ stats.add1 }}">
+        <input type="number" name="add1" placeholder="points" class="points-form" step="1" min="0" max="99999" value="{{ stats.add1 }}">
       {% else %}
-        <input type="number" name="add1" placeholder="points" class="points-form" step="0.1">
+        <input type="number" name="add1" placeholder="points" class="points-form" step="1" min="0" max="99999">
       {% endif %}
     </div>
 
@@ -82,9 +82,9 @@
       Scaling
       <br>
       {% if stats.add1_percent %}
-        <input type="number" name="add1_percent" placeholder="%" class="percent-form" step="0.1" value="{{ stats.add1_percent }}">
+        <input type="number" name="add1_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99" value="{{ stats.add1_percent }}">
       {% else %}
-        <input type="number" name="add1_percent" placeholder="%" class="percent-form" step="0.1">
+        <input type="number" name="add1_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99">
       {% endif %}
     </div>
   </div>
@@ -94,9 +94,9 @@
       Additional
       <br>
       {% if stats.add2 %}
-        <input type="number" name="add2" placeholder="points" class="points-form" step="0.1" value="{{ stats.add2 }}">
+        <input type="number" name="add2" placeholder="points" class="points-form" step="1" min="0" max="99999" value="{{ stats.add2 }}">
       {% else %}
-        <input type="number" name="add2" placeholder="points" class="points-form" step="0.1">
+        <input type="number" name="add2" placeholder="points" class="points-form" step="1" min="0" max="99999">
       {% endif %}
     </div>
 
@@ -104,9 +104,9 @@
       Scaling
       <br>
       {% if stats.add2_percent %}
-        <input type="number" name="add2_percent" placeholder="%" class="percent-form" step="0.1" value="{{ stats.add2_percent }}">
+        <input type="number" name="add2_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99" value="{{ stats.add2_percent }}">
       {% else %}
-        <input type="number" name="add2_percent" placeholder="%" class="percent-form" step="0.1">
+        <input type="number" name="add2_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99">
       {% endif %}
     </div>
   </div>
@@ -116,9 +116,9 @@
       Additional
       <br>
       {% if stats.add3 %}
-        <input type="number" name="add3" placeholder="points" class="points-form" step="0.1" value="{{ stats.add3 }}">
+        <input type="number" name="add3" placeholder="points" class="points-form" step="1" min="0" max="99999" value="{{ stats.add3 }}">
       {% else %}
-        <input type="number" name="add3" placeholder="points" class="points-form" step="0.1">
+        <input type="number" name="add3" placeholder="points" class="points-form" step="1" min="0" max="99999">
       {% endif %}
     </div>
 
@@ -126,9 +126,9 @@
       Scaling
       <br>
       {% if stats.add3_percent %}
-        <input type="number" name="add3_percent" placeholder="%" class="percent-form" step="0.1" value="{{ stats.add3_percent }}">
+        <input type="number" name="add3_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99" value="{{ stats.add3_percent }}">
       {% else %}
-        <input type="number" name="add3_percent" placeholder="%" class="percent-form" step="0.1">
+        <input type="number" name="add3_percent" placeholder="%" class="percent-form" step="0.01" min="0" max="9999.99">
       {% endif %}
     </div>
   </div>

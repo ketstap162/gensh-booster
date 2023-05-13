@@ -289,3 +289,14 @@ input[type='radio'] {
 input[type="checkbox"]:checked {
     accent-color: darkred;
 }
+
+/* LOGIN or LOGOUT */
+.login-body {
+    width: 400px;
+    justify-content: center;
+}
+
+.login-panel {
+    display: flex;
+    justify-content: center;
+}

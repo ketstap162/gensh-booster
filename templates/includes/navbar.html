@@ -27,13 +27,13 @@
       {% if user.is_superuser %}
          <a href="/admin" class="btn btn-dark btn-sml" target="_blank">Admin page</a>
       {% endif %}
-      <a href="#" class="btn btn-dark btn-sml">{{ user.username }}</a>
-      <a href="#" class="btn btn-dark btn-sml">Logout</a>
+      <a class="btn btn-dark btn-sml">{{ user.username }}</a>
+      <a href="{% url 'logout' %}" class="btn btn-dark btn-sml">Logout</a>
     </div>
   {% else %}
-    <div class="float-right">
-      <a href="#" class="btn btn-dark btn-sml">Login</a>
-      <a href="#" class="btn btn-dark btn-sml">Register</a>
+    <div class="float-center">
+      <a href="{% url 'login' %}" class="btn btn-dark btn-sml">Login</a>
+      <a href="{% url 'register' %}" class="btn btn-dark btn-sml">Register</a>
     </div>
   {% endif %}
 </nav>

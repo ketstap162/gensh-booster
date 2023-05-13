@@ -5,9 +5,9 @@
       Crit Rate
       <br>
       {% if stats.crit_rate %}
-        <input type="number" name="crit_rate" placeholder="%" class="percent-form" step="0.1" value="{{ stats.crit_rate }}">
+        <input type="number" name="crit_rate" placeholder="%" class="percent-form" step="0.1" min="0" max="100.0" value="{{ stats.crit_rate }}">
       {% else %}
-        <input type="number" name="crit_rate" placeholder="%" class="percent-form" step="0.1">
+        <input type="number" name="crit_rate" placeholder="%" class="percent-form" step="0.1" min="0" max="100.0">
       {% endif %}
     </div>
 
@@ -15,9 +15,9 @@
       Crit Damage
       <br>
       {% if stats.crit_damage %}
-        <input type="number" name="crit_damage" placeholder="%" class="percent-form" step="0.1" value="{{ stats.crit_damage }}">
+        <input type="number" name="crit_damage" placeholder="%" class="percent-form" step="0.1" min="0" max="999.9" value="{{ stats.crit_damage }}">
       {% else %}
-        <input type="number" name="crit_damage" placeholder="%" class="percent-form" step="0.1">
+        <input type="number" name="crit_damage" placeholder="%" class="percent-form" step="0.1" min="0" max="999.9">
       {% endif %}
     </div>
   </div>
@@ -28,14 +28,14 @@
     <div class="est-item">
         Reactions
         <br>
-        {% if reaction == "Reversed" %}
+        {% if stats.reaction == "Reversed" %}
           <input type="radio" id="null" name="reaction" value="Null">
           <label for="html">None/Other</label><br>
           <input type="radio" id="reversed" name="reaction" value="Reversed" checked>
           <label for="css">Reversed Melt/Vape</label><br>
           <input type="radio" id="full" name="reaction" value="Full">
           <label for="javascript">Melt/Vape</label>
-        {% elif reaction == "Full" %}
+        {% elif stats.reaction == "Full" %}
           <input type="radio" id="null" name="reaction" value="Null">
           <label for="html">None/Other</label><br>
           <input type="radio" id="reversed" name="reaction" value="Reversed">
@@ -73,9 +73,9 @@
       Bonus from Elemental Mastery
       <br>
       {% if stats.em_bonus %}
-        <input type="number" name="em_bonus" placeholder="%" class="percent-form" step="0.1" value="{{ stats.em_bonus }}">
+        <input type="number" name="em_bonus" placeholder="%" class="percent-form" step="0.1" min="0" max="999.9" value="{{ stats.em_bonus }}">
       {% else %}
-        <input type="number" name="em_bonus" placeholder="%" class="percent-form" step="0.1">
+        <input type="number" name="em_bonus" placeholder="%" class="percent-form" step="0.1" min="0" max="999.9">
       {% endif %}
     </div>
   </div>

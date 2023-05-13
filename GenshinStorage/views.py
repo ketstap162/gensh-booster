@@ -16,7 +16,7 @@ def index(request):
     return render(request, "main/index.html", context=context)
 
 
-def storage_view(request, element=False):
+def storage_view(request):
     """View function for the Storage section."""
 
     context = {

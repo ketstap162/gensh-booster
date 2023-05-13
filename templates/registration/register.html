@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Register</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="login-panel">
+      <input type="submit" value="Register" class="btn btn-dark" />
+      <input type="hidden" name="next" value="{% url 'GStorage:index' %}" />
+      <div style="width: 10px"></div>
+      <a href="{% url 'GStorage:index' %}" class="btn btn-secondary">Cancel</a>
+    </div>
+  </form>
+
+
+{% endblock %}
