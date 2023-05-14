@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib import admin
 from django.utils.html import format_html
-from GenshinStorage.models import Character, Post, Skill, SkillData, Element, Weapon, Location
+from GenshinStorage.models import Character, Post, Element, Weapon, Location
 
 
 class CharacterForm(forms.ModelForm):
@@ -32,16 +32,6 @@ admin.site.register(Character, CharacterAdmin)
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(Skill)
-class AdminSkill(admin.ModelAdmin):
-    pass
-
-
-@admin.register(SkillData)
-class SkillDataAdmin(admin.ModelAdmin):
     pass
 
 
