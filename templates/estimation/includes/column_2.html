@@ -58,7 +58,11 @@
   </div>
   <div class="est-row">
     <label>
-      <input type="checkbox" name="arts" value="1" checked>
+      {% if arts %}
+        <input type="checkbox" name="arts" value="1" checked>
+      {% else %}
+        <input type="checkbox" name="arts" value="1">
+      {% endif %}
 
       <img
           src="{% static 'images/artifacts/flame_witch.webp' %}"

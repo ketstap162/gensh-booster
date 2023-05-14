@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+  | Home
+{% endblock %}
+
+{% block content %}
+  <div class="container-fluid content-block news-body">
+    <h2 class="news-header">My Templates</h2>
+    <hr>
+    {% if templates.exists %}
+      {% for template in templates %}
+        <div style="display: inline; margin: 10px">
+          <a href="{% url 'Estimation:estimation_view' %}?stats_id={{ template.id }}" class="btn btn-dark">{{ template.name }}</a>
+          <a href="{% url 'Estimation:delete_template' pk=template.id %}" class="btn btn-danger">❌</a>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>What??? You haven't used our service to calculate damage even once? Use it immediately!</p>
+    {% endif %}
+  </div>
+{% endblock %}

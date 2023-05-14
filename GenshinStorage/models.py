@@ -111,7 +111,7 @@ class Skill(models.Model):
         (NORMAL_ATTACK, "Normal Attack"),
         (HOLD_ATTACK, "Hold Attack"),
         (ELEMENTARY_SKILL, "Elementary Skill"),
-        (ELEMENTARY_BURST, "Elementary Burst")
+        (ELEMENTARY_BURST, "Elementary Burst"),
     ]
     skill = models.CharField(
         max_length=5,

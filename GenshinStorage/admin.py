@@ -7,24 +7,24 @@ from GenshinStorage.models import Character, Post, Skill, SkillData, Element, We
 class CharacterForm(forms.ModelForm):
     class Meta:
         model = Character
-        fields = '__all__'
+        fields = "__all__"
         widgets = {
-            'big_image': forms.FileInput(attrs={'required': False}),
-            'small_image': forms.FileInput(attrs={'required': False}),
+            "big_image": forms.FileInput(attrs={"required": False}),
+            "small_image": forms.FileInput(attrs={"required": False}),
         }
 
 
 class CharacterAdmin(admin.ModelAdmin):
     form = CharacterForm
-    list_display = ('full_name', 'title',  'element',  'display_image')  # 'location', 'weapon',
+    list_display = ("full_name", "title", "element", "display_image")  # 'location', 'weapon',
 
     def display_image(self, obj):
         if obj.big_image:
             return format_html('<img src="{}" width="50"/>'.format(obj.big_image.url))
         else:
-            return '-'
+            return "-"
 
-    display_image.short_description = 'Image'
+    display_image.short_description = "Image"
 
 
 admin.site.register(Character, CharacterAdmin)

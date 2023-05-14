@@ -14,15 +14,11 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name="character",
             name="big_image",
-            field=models.ImageField(
-                null=True, upload_to=GenshinStorage.models.char_big_image_file_path
-            ),
+            field=models.ImageField(null=True, upload_to=GenshinStorage.models.char_big_image_file_path),
         ),
         migrations.AddField(
             model_name="character",
             name="small_image",
-            field=models.ImageField(
-                null=True, upload_to=GenshinStorage.models.char_small_image_file_path
-            ),
+            field=models.ImageField(null=True, upload_to=GenshinStorage.models.char_small_image_file_path),
         ),
     ]

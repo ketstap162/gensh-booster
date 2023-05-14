@@ -8,10 +8,7 @@ def index(request):
 
     num_visits = 1 + request.session.get("num_visits", 0)
     request.session["num_visits"] = num_visits
-    context = {
-        "posts": Post.objects.all(),
-        "num_visits": num_visits
-    }
+    context = {"posts": Post.objects.all(), "num_visits": num_visits}
 
     return render(request, "main/index.html", context=context)
 

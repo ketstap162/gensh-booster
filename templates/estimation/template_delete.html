@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Delete Template "{{ stats.name }}"?</h1>
+
+  <div class="container-fluid content-block login-body">
+      <form action="" method="post">
+        {% csrf_token %}
+
+        <input type="submit" value="Yes" class="btn btn-dark">
+        <a href="{% url 'Estimation:estimation_templates' %}" class="btn btn-secondary btn">Cancel</a>
+      </form>
+    </div>
+{% endblock %}
