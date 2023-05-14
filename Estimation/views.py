@@ -1,4 +1,5 @@
 from datetime import datetime
+from decimal import Decimal
 
 from django.contrib.auth.decorators import login_required
 from numpy import float64
@@ -8,62 +9,65 @@ from django.shortcuts import render, redirect
 from Estimation.models import StatModel, Calculator
 
 
-def extract_or_no_change(instance: StatModel, data: dict, attribute: str) -> None:
-    if data.get(attribute):
+def extract_or_no_change(instance: StatModel, data: dict, attribute: str, data_type: type = str) -> None:
+    if data_type is str:
+        setattr(instance, attribute, data[attribute])
+    else:
         if data.get(attribute):
-            try:
-                setattr(instance, attribute, float64(data[attribute]))
-            except ValueError:
-                setattr(instance, attribute, data[attribute])
+            if data.get(attribute):
+                try:
+                    setattr(instance, attribute, data_type(data[attribute]))
+                except ValueError:
+                    setattr(instance, attribute, data[attribute])
 
 
 def full_data_extract(instance: StatModel | Calculator, data: dict) -> None:
     # ATTACK
-    extract_or_no_change(instance, data, "attack")
-    extract_or_no_change(instance, data, "attack_percent")
+    extract_or_no_change(instance, data, "attack", int)
+    extract_or_no_change(instance, data, "attack_percent", Decimal)
 
     # DEFENSE
-    extract_or_no_change(instance, data, "defense")
-    extract_or_no_change(instance, data, "defense_percent")
+    extract_or_no_change(instance, data, "defense", int)
+    extract_or_no_change(instance, data, "defense_percent", Decimal)
 
     # HP
-    extract_or_no_change(instance, data, "hp")
-    extract_or_no_change(instance, data, "hp_percent")
+    extract_or_no_change(instance, data, "hp", int)
+    extract_or_no_change(instance, data, "hp_percent", Decimal)
 
     # Additional 1
-    extract_or_no_change(instance, data, "add1")
-    extract_or_no_change(instance, data, "add1_percent")
+    extract_or_no_change(instance, data, "add1", int)
+    extract_or_no_change(instance, data, "add1_percent", Decimal)
 
     # Additional 2
-    extract_or_no_change(instance, data, "add2")
-    extract_or_no_change(instance, data, "add2_percent")
+    extract_or_no_change(instance, data, "add2", int)
+    extract_or_no_change(instance, data, "add2_percent", Decimal)
 
     # Additional 3
-    extract_or_no_change(instance, data, "add3")
-    extract_or_no_change(instance, data, "add3_percent")
+    extract_or_no_change(instance, data, "add3", int)
+    extract_or_no_change(instance, data, "add3_percent", Decimal)
 
     # CRITICAL
-    extract_or_no_change(instance, data, "crit_rate")
-    extract_or_no_change(instance, data, "crit_damage")
+    extract_or_no_change(instance, data, "crit_rate", Decimal)
+    extract_or_no_change(instance, data, "crit_damage", Decimal)
 
     # REACTIONS
     extract_or_no_change(instance, data, "reaction")
-    extract_or_no_change(instance, data, "em_bonus")
-    extract_or_no_change(instance, data, "arts")
+    extract_or_no_change(instance, data, "em_bonus", Decimal)
+    extract_or_no_change(instance, data, "arts", Decimal)
 
     # DMG BONUS
-    extract_or_no_change(instance, data, "dmg_bonus")
-    extract_or_no_change(instance, data, "skill_bonus")
-    extract_or_no_change(instance, data, "ed_bonus")
+    extract_or_no_change(instance, data, "dmg_bonus", Decimal)
+    extract_or_no_change(instance, data, "skill_bonus", Decimal)
+    extract_or_no_change(instance, data, "ed_bonus", Decimal)
 
     # RESIST BONUS
-    extract_or_no_change(instance, data, "resist")
-    extract_or_no_change(instance, data, "reduce")
+    extract_or_no_change(instance, data, "resist", int)
+    extract_or_no_change(instance, data, "reduce", int)
 
     # DEF BONUS
-    extract_or_no_change(instance, data, "char_lvl")
-    extract_or_no_change(instance, data, "enemy_lvl")
-    extract_or_no_change(instance, data, "def_reduce")
+    extract_or_no_change(instance, data, "char_lvl", int)
+    extract_or_no_change(instance, data, "enemy_lvl", int)
+    extract_or_no_change(instance, data, "def_reduce", int)
 
 
 def estimation_view(request):
