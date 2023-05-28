@@ -2,8 +2,9 @@ import os
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
-from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
+
+from gensh_booster import settings
 
 
 def char_big_image_file_path(instance, filename):
@@ -100,7 +101,16 @@ class Character(models.Model):
         return "_".join(self.full_name.split()).lower()
 
     def html_link(self):
-        return "includes/heroes_details/" + self.snake_name() + ".html"
+        file_name = self.snake_name() + ".html"
+        file_path = os.path.join(settings.BASE_DIR, 'templates', 'includes', 'heroes_details', file_name)
+
+        if os.path.exists(file_path):
+            return "includes/heroes_details/" + file_name
+
+        with open(file_path, 'w') as file:
+            file.write("<h1>No data about skills<h1>")
+
+        return "includes/heroes_details/" + file_name
 
 
 # class Skill(models.Model):

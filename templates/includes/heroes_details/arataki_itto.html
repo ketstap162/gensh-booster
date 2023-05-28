@@ -1,40 +1,15 @@
+<hr>
 <div class="char-dt-table">
     <div class="char-dt-table-row">
-      <div class="char-dt-table-header">Name</div>
-      <div class="char-dt-table-item">{{ char.full_name }}</div>
-    </div>
-    <div class="char-dt-table-row">
-      <div class="char-dt-table-header">Title</div>
-      <div class="char-dt-table-item">{{ char.title }}</div>
-    </div>
-    <div class="char-dt-table-row">
-      <div class="char-dt-table-header">Rarity</div>
+      <div class="char-dt-table-header">Normal Attack:<br>Fight Club Legend</div>
       <div class="char-dt-table-item">
-        {% if char.rarity is 5 %}
-          <div style="color: #d1b904" class="char-dt-stars">★★★★★</div>
-        {% elif char.rarity is 4 %}
-          <div style="color: mediumpurple" class="char-dt-stars">★★★★</div>
-        {% else %}
-          None
-        {% endif %}
+        <p>
+          Performs up to 4 consecutive strikes.
+          When the 2nd and 4th strikes hit opponents, Itto will gain 1 and 2 stacks of Superlative Superstrength, respectively.
+          Max 5 stacks. Triggering this effect will refresh the current duration of any existing stacks.</p>
+        <p>
+          Additionally, Itto's Normal Attack combo does not immediately reset after sprinting or using his Elemental Skill, "Masatsu Zetsugi: Akaushi Burst!"
+        </p>
       </div>
-    </div>
-    <div class="char-dt-table-row">
-      <div class="char-dt-table-header">Location</div>
-      <div class="char-dt-table-item">
-        <img src="{{ char.location.icon_light.url }}" alt="LocationImage" class="item-img"> {{ char.location }}
-      </div>
-    </div>
-    <div class="char-dt-table-row">
-      <div class="char-dt-table-header">Element</div>
-      <div class="char-dt-table-item"><img src="{{ char.element.image.url }}" alt="ElementImage" class="item-img"> {{ char.element }}</div>
-    </div>
-    <div class="char-dt-table-row">
-      <div class="char-dt-table-header">Weapon</div>
-      <div class="char-dt-table-item"><img src="{{ char.weapon.image.url }}" alt="WeaponImage" class="item-img"> {{ char.weapon }}</div>
-    </div>
-    <div class="char-dt-table-row">
-      <div class="char-dt-table-header">Description</div>
-      <div class="char-dt-table-item">{{ char.description }}</div>
     </div>
 </div>

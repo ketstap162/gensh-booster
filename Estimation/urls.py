@@ -5,8 +5,8 @@ from Estimation.views import estimation_view, template_view, estimation_save, de
 urlpatterns = [
     path("", estimation_view, name="estimation_view"),
     path("save", estimation_save, name="estimation_save"),
-    path("templates", template_view, name="estimation_templates"),
-    path("templates/<int:pk>/", delete_template_view, name="delete_template"),
+    path("templates/", template_view, name="estimation_templates"),
+    path("", delete_template_view, name="delete_template"),
 ]
 
 
