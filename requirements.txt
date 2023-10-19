@@ -1,6 +1,6 @@
 asgiref==3.6.0
 Django==4.1.10
 numpy==1.24.3
-Pillow==9.5.0
+Pillow==10.0.1
 sqlparse==0.4.4
 tzdata==2023.2
